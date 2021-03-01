@@ -15,7 +15,7 @@ Passi da effettuare:
    
    openssl req -config spid_private.conf -new -newkey rsa:2048 -nodes -keyout privkey.pem -out NOMEAZIENDA-PROGRESSIVOINVIO-YYYYMMDD.csr -extensions req_ext
    
-4) leggerre l'hash del csr da inviare ad AGID:
+4) leggere l'hash del csr da inviare ad AGID:
 
    openssl req -noout -modulus -in NOMEAZIENDA-PROGRESSIVOINVIO-YYYYMMDD.csr | openssl sha256
 
@@ -26,7 +26,7 @@ Una volta ricevuto il certificato editate il metadata inserendo la chiave pubbli
 
 Infine firmate tramite xmlsectool il metadata:
 
-6) copiate nella cartella la chive privata privkey.pem generata al punto 3 , il vostro metadata (es: sp-metadata.xml) eil certificato ricevuto ad AGID:
+6) copiate nella cartella la chiave privata (privkey.pem) generata al punto 3, il vostro metadata (es: sp-metadata.xml) ed il certificato ricevuto ad AGID:
   
     ./xmlsectool.sh --sign --inFile sp-metadata.xml --outFile sp-metadata-signed.xml --certificate CERTIFICATORICEVUTO.pem --keyFile privkey.pem
 
