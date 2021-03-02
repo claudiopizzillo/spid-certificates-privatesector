@@ -28,6 +28,6 @@ Infine firmate tramite xmlsectool il metadata:
 
 6) copiate nella cartella la chiave privata (privkey.pem) generata al punto 3, il vostro metadata (es: sp-metadata.xml) ed il certificato ricevuto ad AGID:
   
-    ./xmlsectool.sh --sign --inFile sp-metadata.xml --outFile sp-metadata-signed.xml --certificate CERTIFICATORICEVUTO.pem --keyFile privkey.pem
+    ./xmlsectool.sh --sign --inFile sp-metadata.xml --outFile sp-metadata-signed.xml --certificate CERTIFICATORICEVUTO.crt --keyFile privkey.pem
 
 
